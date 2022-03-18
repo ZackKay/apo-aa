@@ -61,20 +61,14 @@ function toggleListVariables()
 function hideListVariables()
 {
 	if(window.filterList === undefined)
-	{
-		//alert("Filter items not loaded")
-		return false;
-    }
+		loadFilters();
 	window.filterList.forEach(x => hideVariable(x));
 	return true;
 }
 function showListVariables()
 {
 	if(window.filterList === undefined)
-	{
-		//alert("Filter items not loaded")
-		return false;
-	}
+		loadFilters();
 	window.filterList.forEach(x => showVariable(x));
 	return true;
 
