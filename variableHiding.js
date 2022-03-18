@@ -5,6 +5,7 @@ let defaultStorageID = window.location.host + "-DefaultList";
 let storageItem = null;
 let defaultFilters = null;
 let botID = -1;
+let showingVariables = true;
 
 function loadFilters()
 {
@@ -44,6 +45,17 @@ function loadDefaultFilters()
 		localStorage.setItem(defaultStorageID, JSON.stringify(defaultFilters));
 	}
 	return true;
+}
+
+function toggleListVariables()
+{
+	if(showingVariables)
+		hideListVariables();
+	else
+		showListVariables();
+		
+	showingVariables = !showingVariables;
+	return showingVariables;
 }
 
 function hideListVariables()
