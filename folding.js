@@ -8,14 +8,14 @@ function foldTop()
 	let collapser;
 	let flowpoint;
 	let i;
-	
+	console.log("start foldTop");
 	for(i = 0; i<flowpoints.length; i++)
 	{
 		flowpoint = flowpoints[i];
 		collapser = flowpoint.querySelector('div.taskbotflowpoint-collapser span.fa-caret-down');
 		if(collapser !== null) flowpoint.querySelector('div.taskbotflowpoint-collapser').click();
 	}
-	
+	console.log("done foldTop");
 	foldEnd();
 }
 
@@ -27,14 +27,14 @@ function unfoldTop()
 	let collapser;
 	let flowpoint;
 	let i;
-	
+	console.log("start unfoldTop");
 	for(i = flowpoints.length - 1; i>=0; i--)
 	{
 		flowpoint = flowpoints[i];
 		collapser = flowpoint.querySelector('div.taskbotflowpoint-collapser span.fa-caret-right');
 		if(collapser !== null) flowpoint.querySelector('div.taskbotflowpoint-collapser').click();
 	}
-	
+	console.log("done unfoldTop");
 	foldEnd();
 
 }
@@ -47,14 +47,14 @@ function foldAll()
 	let collapser;
 	let flowpoint;
 	let i;
-	
+	console.log("start foldAll");
 	for(i = flowpoints.length - 1; i>=0; i--)
 	{
 		flowpoint = flowpoints[i];
 		collapser = flowpoint.querySelector('div.taskbotflowpoint-collapser span.fa-caret-down');
 		if(collapser !== null) flowpoint.querySelector('div.taskbotflowpoint-collapser').click();
 	}
-	
+	console.log("done foldAll");
 	foldEnd();
 }
 
@@ -67,6 +67,7 @@ function unfoldAll()
 	let i;
 	let flowpoint;
 	let collapser;
+	console.log("start unfoldAll");
 	while(downFlowpoints.length > 0)
 	{
 		flowpoints = document.querySelectorAll('div.taskbotflowpoint');
@@ -78,7 +79,7 @@ function unfoldAll()
 		}
 		downFlowpoints = document.querySelectorAll('div.taskbotflowpoint-collapser span.fa-caret-right');
 	}
-	
+	console.log("done unfoldAll");
 	foldEnd();
 }
 
